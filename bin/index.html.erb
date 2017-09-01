@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>The Matrix</h1>
+    <p>Welcome to the Matrix. Architects must fill out their information to make themselves visible</p>
+    <ul class="list-unstyled">
+      <% @architects.each do |architect| %>
+        <% if architect.architect_profile %>
+        <li>
+          <div class="well row <%= cycle('white-bg', '') %>">
+            <div class="col-sm-4 text-center">
+              <% if architect.architect_profile.architect_avatar %>
+                <%= link_to user do %>
+                  <%= image_tag architect.architect_profile.architect_avatar.url(:thumb), class: 'architects-index-avatar' %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <div>
+              <%= link_to architect do %>
+                <h2><%= architect.architect_profile.architect_name %></h2>
+              <% end %>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

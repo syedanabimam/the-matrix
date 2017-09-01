@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Agents of Matrix</h1>
+    <ul class="list-unstyled">
+
+      <% @agents[:data].each do |agent| %>
+        <% if agent %>
+        <li>
+          <div class="well-inverse %>">
+            <div>
+              <h2><%= agent %></h2>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Sentinels of Matrix</h1>
+    <ul class="list-unstyled">
+
+      <% @sentinels[:data].each do |sentinel| %>
+        <% if sentinel %>
+        <li>
+          <div class="well-inverse %>">
+            <div>
+              <h2><%= sentinel %></h2>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

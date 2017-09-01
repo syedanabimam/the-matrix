@@ -1,0 +1,25 @@
+<%= form_for @architect_profile, url: architect_architect_profile_path, :html => { :multipart => true } do |f| %>
+  <div class="form-group">
+    <%= f.label :architect_name %>
+    <%= f.text_field :architect_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :architect_work %>
+    <%= f.text_area :architect_work, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :architect_avatar %>
+    <%= f.file_field :architect_avatar, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :architect_phone %>
+    <%= f.text_field :architect_phone, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :architect_bio %>
+    <%= f.text_area :architect_bio, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Members of Resistance</h1>
+    <ul class="list-unstyled">
+
+      <% @resistance_members[:data].each do |resistance_member| %>
+        <% if resistance_member %>
+        <li>
+          <div class="well-inverse %>">
+            <div>
+              <h2><%= resistance_member %></h2>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Ships of Resistance</h1>
+    <ul class="list-unstyled">
+
+      <% @resistance_ships[:data].each do |resistance_ship| %>
+        <% if resistance_ship %>
+        <li>
+          <div class="well-inverse %>">
+            <div>
+              <h2><%= resistance_ship %></h2>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

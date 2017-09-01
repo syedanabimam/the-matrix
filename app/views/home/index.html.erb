@@ -1,2 +1,36 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="jumbotron text-center background_image">
+  <h1>Welcome to the Matrix, Neo!</h1>
+  <h3>Follow the white rabbit and see what lies beyond what is believeable</h3>
+</div>
+<div class="row">
+  <% if architect_signed_in? %>
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Architect Profile</h2>
+        <% if current_architect.architect_profile %>
+          <%= link_to "Edit your profile", edit_architect_architect_profile_path(architect_id: current_architect.id), class: 'btn btn-default btn-lg btn-block' %>
+          <%= link_to "View your profile", architect_path(current_architect), class: 'btn btn-default btn-lg btn-block' %>
+        <% else %>
+          <p class="text-center">An architect must have a profile. Create one to become visible</p>
+          <%= link_to "Create your profile", new_architect_architect_profile_path(current_architect), class: 'btn btn-default btn-lg btn-block'%>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well">
+        <h2 class="text-center">Matrix has you!</h2>
+        <p class="text-center">See who other architects are</p>
+        <%= link_to "Architect Community", architects_path, class: 'btn btn-default btn-lg btn-block' %>
+      </div>
+    </div>
+  <% else %>
+    <div class="col-md-offset-3 col-md-6">
+      <div class="well">
+        <h2 class="text-center">Architects Area</h2>
+        <h4 class="text-center">Sign up as an architect and design what matrix is to be.</h4>
+        <br/>
+        <%= link_to "Sign up as an Architect", new_architect_registration_path, class: 'btn btn-primary btn-lg btn-block' %>
+      </div>
+    </div>
+  <% end %>
+</div>

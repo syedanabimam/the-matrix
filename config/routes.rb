@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   devise_for :architects, path_prefix: 'my'
   resources :architects, only: %i[index show] do
-    # resource :architect_profile
+    resource :architect_profile
     # resource :sheeples
     # resource :oracles
     # collection do
-    #   post :create_agents
-    #   get :get_agents
-    #   post :change_agents
-    #   get :delete_agents
-    #   get :transform_sheeples_to_agents
-    #
+      # post :create_agents
+      # get :get_agents
+      # post :change_agents
+      # get :delete_agents
+      # get :transform_sheeples_to_agents
+
     #   post :create_sentinels
     #   get :get_sentinels
     #   post :change_sentinels
@@ -36,4 +36,8 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+
+  get 'machines', to: 'machines#get_machines'
+  get 'resistance', to: 'resistance#get_resistance'
+
 end
