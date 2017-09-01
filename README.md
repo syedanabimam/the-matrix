@@ -20,7 +20,7 @@ To initiate the project, run these commands:
 
 * rake db:seed to seed the database
 
-* rails s -p 3000
+* rails s -p 3000 
 
 * Sign up as an architect
 
