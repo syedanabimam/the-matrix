@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :architects, path_prefix: 'my'
   resources :architects, only: %i[index show] do
     # resource :architect_profile
-    # resource :sheeple
+    # resource :sheeples
+    # resource :oracles
     # collection do
     #   post :create_agents
     #   get :get_agents

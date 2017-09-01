@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901002401) do
+ActiveRecord::Schema.define(version: 20170901024106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "architect_profiles", force: :cascade do |t|
+    t.string "architect_name"
+    t.string "architect_phone"
+    t.text "architect_bio"
+    t.text "architect_work"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "architect_id"
+    t.string "architect_avatar_file_name"
+    t.string "architect_avatar_content_type"
+    t.integer "architect_avatar_file_size"
+    t.datetime "architect_avatar_updated_at"
+    t.index ["architect_id"], name: "index_architect_profiles_on_architect_id"
+  end
 
   create_table "architects", force: :cascade do |t|
     t.string "email", default: "", null: false
